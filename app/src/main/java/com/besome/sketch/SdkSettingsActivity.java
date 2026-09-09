@@ -17,17 +17,16 @@ public class SdkSettingsActivity extends AppCompatActivity {
         EditText etMin = findViewById(R.id.et_min);
         Button btnSave = findViewById(R.id.btn_save);
 
-        SdkManager sdk = new SdkManager(this);
-        etCompile.setText(String.valueOf(sdk.getCompileSdk()));
-        etTarget.setText(String.valueOf(sdk.getTargetSdk()));
-        etMin.setText(String.valueOf(sdk.getMinSdk()));
+        etCompile.setText(String.valueOf(SdkManager.getCompile(this)));
+        etTarget.setText(String.valueOf(SdkManager.getTarget(this)));
+        etMin.setText(String.valueOf(SdkManager.getMin(this)));
 
         btnSave.setOnClickListener(v -> {
             try {
                 int c = Integer.parseInt(etCompile.getText().toString().trim());
                 int t = Integer.parseInt(etTarget.getText().toString().trim());
                 int m = Integer.parseInt(etMin.getText().toString().trim());
-                sdk.setSdks(c, t, m);
+                SdkManager.saveSdk(this, c, t, m);
                 Toast.makeText(this, "Saved!", Toast.LENGTH_SHORT).show();
                 finish();
             } catch (Exception e) {
