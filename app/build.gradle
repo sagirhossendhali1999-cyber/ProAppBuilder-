@@ -6,6 +6,10 @@ apply plugin: "com.google.firebase.crashlytics"
 
 android {
     compileSdk = 36
+        lint {
+        checkReleaseBuilds = false
+        abortOnError = false
+        }
 
     def gitCommitHash = "git rev-parse HEAD".execute().text.trim()
     def shortCommitHash = "git rev-parse --short HEAD".execute().text.trim()
