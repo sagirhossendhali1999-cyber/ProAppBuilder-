@@ -1,18 +1,22 @@
 name: Auto Rebrand
 on: workflow_dispatch
+permissions:
+  contents: write
+
 jobs:
   rebrand:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Change App Name
         run: |
-          sed -i 's/>Sketchware Pro</>Pro App Builder</g' app/src/main/res/values/strings.xml
-          sed -i 's/com.besome.sketch/com.sagir.proappbuilder/g' app/build.gradle
+          sed -i 's/>Sketchware Pro</>Pro App Builder</g' app/src/main/res/values/strings.xml || true
       - name: Save
         run: |
           git config user.email "sagir@test.com"
           git config user.name "Sagir"
-          git add .
-          git commit -m "renamed"
+          git add.
+          git commit -m "renamed" || echo "no change"
           git push
