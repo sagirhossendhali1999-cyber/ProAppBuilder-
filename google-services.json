@@ -4,14 +4,29 @@
     "project_id": "proappbuilder",
     "storage_bucket": "proappbuilder.appspot.com"
   },
-  "client": [{
-    "client_info": {
-      "mobilesdk_app_id": "1:1234567890:android:dummy",
-      "android_client_info": {"package_name": "com.besome.sketch"}
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1234567890:android:com.besome.sketch",
+        "android_client_info": {
+          "package_name": "com.besome.sketch"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [{"current_key": "AIzaDummy1234567890"}],
+      "services": {"appinvite_service": {"other_platform_oauth_client": []}}
     },
-    "oauth_client": [],
-    "api_key": [{"current_key": "AIzaDummy1234567890"}],
-    "services": {"appinvite_service": {"other_platform_oauth_client": []}}
-  }],
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1234567890:android:pro.sketchware",
+        "android_client_info": {
+          "package_name": "pro.sketchware"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [{"current_key": "AIzaDummy1234567890"}],
+      "services": {"appinvite_service": {"other_platform_oauth_client": []}}
+    }
+  ],
   "configuration_version": "1"
 }
