@@ -24,6 +24,10 @@
         android:id="@+id/app_settings"
         android:icon="@drawable/ic_mtrl_settings"
         android:title="@string/common_word_settings" />
+        <item
+        android:id="@+id/sdk_manager"
+        android:icon="@drawable/ic_mtrl_settings"
+        android:title="SDK Manager" />
     <item android:title="@string/common_word_apps">
         <menu>
             <item
